@@ -55,50 +55,72 @@
       // Try pasting these commands into your browser console
       
       // Console.log is our friend
-      console.log('Hello World');
+      console.log('you can put anything here and you can see what happens');
 
       // Let's explore some Javascript types!
-      console.log("--- Checking out some types ---")
-      
+      console.log(typeof("HELLO"))
+      console.log(typeof(new Object()))
+      console.log(typeof(console.log))
+      console.log(typeof(undefined))
+
+      // gives object, but this is wrong, it is actually null...
+      console.log(typeof(null))
       
       
       
       
       
       // Learn a bit more about Objects
-      // console.log("--- Testing [] and {} ---")
+      console.log("--- Testing [] and {} ---")
+      let list = [1,2,3];
+      console.log(list);
+      console.log(typeof(list));
 
+      let dict = {"1:":1, "2:":2, "3:":3};
+      console.log(dict);
+      console.log(typeof(dict));
+
+      list['newKey'] = "I promise this works" // all objects are dicts
+      console.log(list)
+      
       
       
       
 
       
       // So what can accept keys?
-      // console.log("--- So what works like a dict? ---");
-      // let differentTypes = [3, "hello", new Object(), [1,2,3], function(x) {}, console];
-      // for (let item of differentTypes) {
-      //   console.log( item, typeof(item) );
-      //   item['test'] = "keyAdded";
-      //   console.log( item['test'] ); 
-      // } 
+      console.log("--- So what works like a dict? ---");
+      let differentTypes = [3, "hello", new Object(), [1,2,3], function(x) {}, console];
+      for (let item of differentTypes) {
+        console.log( item, typeof(item) );
+        item['test'] = "keyAdded";
+        console.log( item['test'] ); 
+      } 
       
+      console.log("--- Now exploring type coercion ---")
+      
+      console.log(3+"string")
+      console.log("1"+2)
+      console.log(4+true)
+      console.log(false + true)
+      console.log(false+"true")
+      console.log([1,2,3]+2)
       
       // Types can get a bit unexpected in JS
-      // console.log("--- Now exploring type coercion ---")
-      
       
       
       // Why does this matter?
-      
-      
-      
+      // when JS adjust the type (coerce the type) so that they agree
       
       // Comparison weirdness
-      // console.log("--- Now trying some comparisons ---")
+      console.log("--- Now trying some comparisons ---")
       
-      
-      
-      
+    
+      let color = "red";
+      console.log(color);
+      document.getElementById("rectangle").setAttribute("fill", color);
+      //******* === turns type coercion off 
+      console.log(NaN === NaN)
 
       // Shortcircuiting of logical statements
       // console.log("--- Shortcircuiting ---");
